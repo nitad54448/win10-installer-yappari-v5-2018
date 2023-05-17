@@ -67,7 +67,7 @@ Z<sub>o</sub>=(Aw/ $\sqrt{jw})$ coth(B $\sqrt{jw})$
 
 The Warburg "short" describes the impedance of a finite-length diffusion with transmissible boundary, with the expression:
 
-Z<sub>s</sub>=(Aw/$\sqrt{jw})$ tanh(B$\sqrt{jw})$
+Z<sub>s</sub>=(Aw/ $\sqrt{jw})$ tanh(B $\sqrt{jw})$
 
 Some others can be added upon request, if I will have the time and if there is an interest for it.
 
