@@ -63,7 +63,7 @@ s=1/(Q $\sqrt{2})$
 
 The Warburg "open" describes the impedance of a finite-length diffusion with reflective boundary.  The formula used here is
 
-Z<sub>o</sub>=Aw/ $\sqrt{jw})$ coth(B $\sqrt{jw}$
+Z<sub>o</sub>=(Aw/ $\sqrt{jw})$ coth(B $\sqrt{jw})$
 
 The Warburg "short" describes the impedance of a finite-length diffusion with transmissible boundary, with the expression:
 
