@@ -35,6 +35,8 @@ The parameters obtained for Warburg in other programs are typically by fitting a
 
 s=1/(Q $\sqrt{2})$
 
+s=(1/ $\sqrt{jw})$
+
 The Warburg "open" describes the impedance of a finite-length diffusion with reflective boundary.  The formula used here is
 
 Z<sub>o</sub>=(Aw/ $\sqrt{jw})$ coth(B $\sqrt{jw})$
