@@ -66,7 +66,7 @@ Overall, the notation is quite straightforward once you become familiar with the
 
 ### Read data ###
 This command opens a menu with three options as of now, designing which type of file read. 
-	_3 cols tabs_
+	__3 cols tabs__
 This reads a three-column ASCII file, which should be separated by tabs and contain frequency in Hz, Zr, and Zi. It is important to note that for French users (and some others), the separator value should be a dot “.” and not a comma “,”. If the reading is successful, the dataset will be inserted in the first position with a name taken from the filename open. This name can be changed by the user. Only one dataset can be read with this command.
 	_Zview txt_
 This is a Zview file, also an ASCII type, that can hold multiple data sets. Yappari will read all datasets it finds in this file and insert them in the datasets listing, with a name taken from the file name and a suffix indicating the position in the file : the first datasets will have_0, then _1, .. and so on.
