@@ -130,7 +130,7 @@ This will open this help file in a pdf format.
 ## Exit ##
 No need for explications on what this command does.
 
-# Author #
+## Author ##
 This program can be used freely and distributed according to CC-BY-NC-SA.
 It was written in Labview and it includes the JKI toolkits for Labview, © 2018, JKI. All rights reserved.
 
