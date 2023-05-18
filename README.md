@@ -98,31 +98,31 @@ This list box shows all the datasets in memory. You can select one or more datas
 ### Action ###
 This button can trigger several commands:
 
-	_Clone these parameters to all_
+__Clone these parameters to all__
 Copy the listed parameters to all datasets. Useful for bulk fitting.
 
-	_Save all parameters_
+__Save all parameters__
 Save all parameters names and values for all datasets in a file.
 
-	_Save active exp datasets_
+__Save active exp datasets__
 This command allows you to save the experimental data to a file in a specific format. The format is three columns separated by tabs, with frequency in Hz, Zr, and Zi. This is useful for simulating impedance spectra for a given model. 
 
-	_Save active calc datasets_
+__Save active calc datasets__
 This command allows you to save the calculated data to a file in a three columns format.
 
-	_Save active exp and calc datasets_
+__Save active exp and calc datasets__
 This command allows you to save the experimental data and calculated data, in a 5 columns ASCII file. Note that all datasets are saved in a single file, each dataset will be separated by the label of the set. This might be used to plot nicer graphs.
 
-	_Average active datasets_
+__Average active datasets__
 This command will calculate the mean of Zr and Zi for selected datasets. This function can be applied to datasets measured at the same frequencies.
 
-	_Erase active datasets_
+__Erase active datasets__
 Irreversible action removing one or more datasets and all related parameters from memory (by active one should understand “selected”)
 
-	_Report all_
+__Report all__
 This command generates an HTML report containing information about the model used, the parameters used, the fitted parameters, and their standard deviation. It also includes images of the fit as well as all experimental and calculated data. The report is saved in your temporary directory and automatically opened in a browser. You can use the data in the report to create your own graphs or to check for any discrepancies. If you find any errors in the calculations, please report them so they can be corrected.
 
-	_Help_
+__Help__
 This will open this help file in a pdf format.
 
 ### Exit ###
