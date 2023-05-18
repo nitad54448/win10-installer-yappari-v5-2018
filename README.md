@@ -31,11 +31,12 @@ Warburg "infinite" diffusion coefficient s is expressed here as:
 
 Z<sub>w</sub>= sw<sup>-0.5</sup> -j s w<sup>-0.5</sup>
 
+Z<sub>w</sub>= s$\sqrt{w})$ -js$\sqrt{w})$
+
+
 The parameters obtained for Warburg in other programs are typically by fitting a CPE with n=0.5, you will get the same result but the Q parameter obtained is
 
 s=1/(Q $\sqrt{2})$
-
-s=(1/ $\sqrt{jw})$
 
 The Warburg "open" describes the impedance of a finite-length diffusion with reflective boundary.  The formula used here is
 
