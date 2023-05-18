@@ -7,43 +7,18 @@ This program can be referenced in publications as http://dx.doi.org/10.13140/RG.
 
 If you are using Windows 10, you can download and install YAPPARI v5 from this page. This program can perform multiple datasets fits. For a single dataset a simpler program called Yappari 4.2, available here on Github in one of my repositories.
 
-YAPPARI is designed to simulate or fit the impedance spectrum of user selected circuits. This help file provides a brief introduction to the program. You are welcome to contribute to the file, you can send it to me or fork it on Github.
-
-## Main windows ##
-
-### Open File ###
-This command reads a three-column ASCII file, which should be separated by tabs and contain frequency in Hz, Zr, and Zi. It is important to note that for French users (and some others), the separator value should be a dot “.” and not a comma “,”. If the reading is successful, the data will be plotted.
-
-### Fit ###
-This command is used to fit a set of parameters given that there are some data and a valid circuit (i.e., there are parameters to fit on the right side of the window). The user can select which parameters to fit and it is recommended to start with a few parameters first, ensuring that the initial values are close to the expected values. The simulated spectrum will be updated with every change in the parameters, and the user can perform manual adjustments as necessary.
-
-The fitting can be performed using different methods, which are discussed below, although there is not much difference in the output of these methods. The fitting process involves up to 5000 cycles, and multiple iterations may be necessary, particularly if the initial values are far from the actual values.
-
-The quality of the fit is evaluated using the R^2 statistical parameter and the chi^2 value. However, the use of the chi^2 value as a statistical parameter is debatable, as discussed in the paper "Dos and don'ts of reduced chi-squared" by Andrae et al. (https://arxiv.org/abs/1012.3754). The chi^2 value reported here is calculated as (Sum ((Z_obs-Z_calc)^2/Z_calc))/DOF, with each term multiplied by a weight. The degree of freedom (DOF) is considered as Nr_of_points - nr_of_fitted_params. The user can select the weight for the fit.
-
-### Method ###
-This command allows the user to select the method used for nonlinear fitting. There are three methods available: Trusted Region Dog Led algorithm (TRDL), Constrained Levenberg Marquardt, and Levenberg Marquardt. The user can choose any of these methods, and if the model is robust, they should obtain the same results. 
-
-For TRDL and Constrained LM, the fit is constrained to certain intervals. For example, resistors are limited to the range of 1 mOhm to 1 GOhm, capacitors are between 10^-4 and 10^-14, and so on. It is recommended to start with TRDL and then make a final fit with the standard (unconstrained) LM method.
-
-### Report ###
-This command generates an HTML report containing information about the model used, the parameters used, the fitted parameters, and their standard deviation. It also includes images of the fit as well as all experimental and calculated data. The report is saved in your temporary directory and automatically opened in a browser. You can use the data in the report to create your own graphs or to check for any discrepancies. If you find any errors in the calculations, please report them so they can be corrected.
-
-### Save sim ###
-This command allows you to save the simulated data to a file in a specific format. The format is three columns separated by tabs, with frequency in Hz, Zr, and Zi. This is useful for simulating impedance spectra for a given model. 
-If no data were previously read, the program will use 100 frequency points ranging from 10 mHz to 1 MHz in log spacing. However, if you read an experimental data file, the simulation of the impedance spectrum will only be made at the frequencies read from your data file. 
-It's important to note that if you have both experimental and simulated data, using the Report command might be a better choice since it allows you to see both the calculated and experimental data together.
-
-### Exit ###
-No need for explications on what this command does.
+YAPPARI-5 is designed to multiple datasets fitting of the impedance spectra of one user-made circuit. You are encouraged to contribute to this help file, you can send it to me or fork it on Github. As much I like programming, writing documentation is boring.
 
 ## Panels ##
-### Zr, -Zi ###
-This panel shows a Nyquist plot, which is a standard way to visualize impedance data. The scale on the graph will adjust automatically based on the data. However, if you want to manually set a specific range, you can disable the Auto-axis feature by clicking on the graph. Additionally, you have the option to add markers for specific frequencies, and you can even move them around on the graph using the Details panel.
+The program has a graphic panel window with 5 options, a parameter list and several commands grouped in the right side of the window.
 
-### Zr, Zi, Z/phi ###
+### Zr, -Zi ###
+This panel shows a Nyquist plot, which is a standard way to visualize impedance data. The scale on the graph will adjust automatically based on the data. However, if you want to manually set a specific range, you can disable the Auto-axis feature by clicking on the graph
+
+### Zr, Zi ###
 These panels will show the dependency of impedances (real, imaginary or modulus) as a function of frequency and the differences between the calculated and experimental values (if any).
 
+### Model ###
 ### Model ###
 A circuit can be created by the user by selecting element circuits.
 Up to ten elements can be added (obviously it is not realistic to fit such a circuit, unless you want to fit a crocodile). Only the first 18 parameters will be shown (to prevent outrageous fits).
@@ -89,9 +64,67 @@ The numbering of the devices goes from left to right and top to bottom. For exam
 
 Overall, the notation is quite straightforward once you become familiar with the conventions used.
 
-### Save sim ###
-The "Save Sim" command allows you to save the impedance spectrum data calculated by the software in a file. This can be useful if you want to use the data for further analysis or visualization.
-In addition to the "Save Sim" command, there is also a report page that generates a HTML file. This report includes not only the calculated data but also the reports of the fitted values. This means that you can see the parameter values that were used to generate the impedance spectrum, as well as any statistics or other relevant information about the fitting process. The report can be a helpful tool for understanding the quality of the fit and for identifying any areas where improvements could be made.
+
+### Read data ###
+This command opens a menu with three options as of now, designing which type of file read. 
+	_3 cols tabs_
+This reads a three-column ASCII file, which should be separated by tabs and contain frequency in Hz, Zr, and Zi. It is important to note that for French users (and some others), the separator value should be a dot “.” and not a comma “,”. If the reading is successful, the dataset will be inserted in the first position with a name taken from the filename open. This name can be changed by the user. Only one dataset can be read with this command.
+	_Zview txt_
+This is a Zview file, also an ASCII type, that can hold multiple data sets. Yappari will read all datasets it finds in this file and insert them in the datasets listing, with a name taken from the file name and a suffix indicating the position in the file : the first datasets will have_0, then _1, .. and so on.
+	_MFLI csv_
+This is a comma separated values file as obtained from MFLI/MFIA, a Zurich Instruments impedance analyzer. As in the Zview text file, multiple data sets can be saved or read from this file. In the data folder that is provided with this installer you can find such a file containing 34 measurements of the same sample. It would be boring and useless to fit all these 34 datasets one by one. Yappari-5 can handle such multiple data sets.
+
+### Method ###
+This command allows the user to select the method used for nonlinear fitting. There are three methods available: Trusted Region Dog Led algorithm (TRDL), Constrained Levenberg Marquardt, and Levenberg Marquardt. The user can choose any of these methods, and if the model is robust, they should obtain the same results. 
+
+For TRDL and Constrained LM, the fit is constrained to certain intervals. For example, resistors are limited to the range of 1 mOhm to 1 TOhm, capacitors are between 10^-4 and 10^-14, and so on. It is recommended to start with TRDL and then make a final fit with the standard (unconstrained) LM method.
+
+
+### Fit selected ###
+This command is used to fit the set of parameters that describes the circuit, if the circuit is valid (i.e., there are parameters to fit on the right side of the window). The user can select which parameters to fit and it is recommended to start with a few parameters first, ensuring that the initial values are close to the expected values. The simulated spectrum will be updated with every change in the parameters, and the user can perform manual adjustments as necessary. 
+For large datasets, if the data are described by the same model circuit, I suggest to select one measurement, adjust the parameters manually to be close to solution, then fit. After fit you can “Clone” these parameters to all other datasets and select all datasets, then Fit all selected in a go.
+
+The fitting can be performed using different methods, which are discussed before, although there is not much difference in the output of these methods. The fitting process involves up to 8000 cycles for a dataset, and multiple iterations may be necessary, particularly if the initial values are far from the actual values.
+
+The quality of the fit is evaluated using the R^2 statistical parameter and the chi^2 value. However, the use of the chi^2 value as a statistical parameter is debatable, as discussed in the paper "Dos and don'ts of reduced chi-squared" by Andrae et al. (https://arxiv.org/abs/1012.3754). The chi^2 value reported here is calculated as (Sum ((Z_obs-Z_calc)^2/Z_calc))/DOF. The degree of freedom (DOF) is considered as Nr_of_points - nr_of_fitted_params. 
+
+
+### Datasets ###
+This list box shows all the datasets in memory. You can select one or more datasets. The parameters listed are those of the dataset selected (or the first selected dataset if you have more than one selection). The datasets label can be edited.
+
+
+### Action ###
+This button can trigger several commands:
+
+	_Clone these parameters to all_
+Copy the listed parameters to all datasets. Useful for bulk fitting.
+
+	_Save all parameters_
+Save all parameters names and values for all datasets in a file.
+
+	_Save active exp datasets_
+This command allows you to save the experimental data to a file in a specific format. The format is three columns separated by tabs, with frequency in Hz, Zr, and Zi. This is useful for simulating impedance spectra for a given model. 
+
+	_Save active calc datasets_
+This command allows you to save the calculated data to a file in a three columns format.
+
+	_Save active exp and calc datasets_
+This command allows you to save the experimental data and calculated data, in a 5 columns ASCII file. Note that all datasets are saved in a single file, each dataset will be separated by the label of the set. This might be used to plot nicer graphs.
+
+	_Average active datasets_
+This command will calculate the mean of Zr and Zi for selected datasets. This function can be applied to datasets measured at the same frequencies.
+
+	_Erase active datasets_
+Irreversible action removing one or more datasets and all related parameters from memory (by active one should understand “selected”)
+
+	_Report all_
+This command generates an HTML report containing information about the model used, the parameters used, the fitted parameters, and their standard deviation. It also includes images of the fit as well as all experimental and calculated data. The report is saved in your temporary directory and automatically opened in a browser. You can use the data in the report to create your own graphs or to check for any discrepancies. If you find any errors in the calculations, please report them so they can be corrected.
+
+	_Help_
+This will open this help file in a pdf format.
+
+### Exit ###
+No need for explications on what this command does.
 
 ### About ###
 Brief help listing the version of the program. The button “more” will open this pdf file.
