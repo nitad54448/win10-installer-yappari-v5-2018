@@ -104,16 +104,16 @@ __Save all parameters__
   Save all parameters names and values for all datasets in a file.
 
 __Save active exp datasets__
-  This command allows you to save the experimental data to a file in a specific format. The format is three columns separated by tabs, with frequency in Hz, Zr, and Zi. This is useful for simulating impedance spectra for a given model. 
+  This command allows you to save the *active* experimental data, that means the selected ones, to a single file in a specific format. The format is three columns separated by tabs, with frequency in Hz, Zr, and Zi. This is useful for simulating impedance spectra for a given model. 
 
 __Save active calc datasets__
-  This command allows you to save the calculated data to a file in a three columns format.
+  This command allows you to save the *active* calculated data to a file in a three columns format.
 
 __Save active exp and calc datasets__
-  This command allows you to save the experimental data and calculated data, in a 5 columns ASCII file. Note that all datasets are saved in a single file, each dataset will be separated by the label of the set. This might be used to plot nicer graphs.
+  This command allows you to save the *active*  experimental data and calculated data, in a 5 columns ASCII file. Note that all datasets are saved in a single file, each dataset will be separated by the label of the set. This might be used to plot nicer graphs.
 
 __Average active datasets__
-  This command will calculate the mean of Zr and Zi for selected datasets. This function can be applied to datasets measured at the same frequencies.
+  This command will calculate the mean of Zr and Zi for the selected datasets. This function can be applied to datasets measured at the same frequencies.
 
 __Erase active datasets__
   Irreversible action removing one or more datasets and all related parameters from memory (by active one should understand “selected”)
