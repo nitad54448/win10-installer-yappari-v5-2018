@@ -136,8 +136,4 @@ It was written in Labview and it includes the JKI toolkits for Labview, © 2018,
 
 For questions or comments:
 
-__Nita DRAGOE__
-Université Paris-Saclay
-ICMMO/SP2M
-91400 Orsay
-France
+__Nita DRAGOE__, Université Paris-Saclay, ICMMO/SP2M, 91400 Orsay, France
