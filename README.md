@@ -33,15 +33,15 @@ Z<sub>w</sub>= s/($\sqrt{w})$ -js/($\sqrt{w})$
 
 The parameters obtained for Warburg in other programs are typically by fitting a CPE with n=0.5, you will get the same result but the Q parameter obtained is
 
-s=1/(Q$\sqrt{2})$
+s=1/(Q $\sqrt{2})$
 
 The Warburg "open" describes the impedance of a finite-length diffusion with reflective boundary.  The formula used here is
 
-Z<sub>o</sub>=(Aw/$\sqrt{jw})$ coth(B$\sqrt{jw})$
+Z<sub>o</sub>=(Aw/ $\sqrt{jw})$ coth( B$\sqrt{jw})$
 
 The Warburg "short" describes the impedance of a finite-length diffusion with transmissible boundary, with the expression:
 
-Z<sub>s</sub>=(Aw/$\sqrt{jw})$ tanh(B$\sqrt{jw})$
+Z<sub>s</sub>=(Aw/ $\sqrt{jw})$ tanh(B $\sqrt{jw})$
 
 Some others can be added upon request, if I will have the time and if there is an interest for it.
 
