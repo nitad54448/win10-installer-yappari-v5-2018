@@ -19,7 +19,6 @@ This panel shows a Nyquist plot, which is a standard way to visualize impedance 
 These panels will show the dependency of impedances (real, imaginary or modulus) as a function of frequency and the differences between the calculated and experimental values (if any).
 
 ### Model ###
-### Model ###
 A circuit can be created by the user by selecting element circuits.
 Up to ten elements can be added (obviously it is not realistic to fit such a circuit, unless you want to fit a crocodile). Only the first 18 parameters will be shown (to prevent outrageous fits).
 When you click on one of the ten available cases, a new window will appear where you can select the element you want to add. Simply click on the picture of the element you want to add and it will be added to the model. The available circuit elements include resistors, capacitors, inductors, and more complex elements such as constant phase elements or Warburg elements.
