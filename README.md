@@ -5,9 +5,9 @@
 YAPPARI stands for Yet Another Program for Analysis and Research in Impedance.
 This program can be referenced in publications as http://dx.doi.org/10.13140/RG.2.2.15160.83200
 
-If you are using Windows 10, you can download and install YAPPARI v5 from this page. This program can perform multiple datasets fits. For a single dataset a simpler program called Yappari 4.2, available here on Github in one of my repositories.
+If you are using Windows 10, you can download and install YAPPARI v5 from this page. This program can perform multiple datasets fits. For a single dataset fit a simpler program called Yappari 4.2, is available here on Github in one of my repositories, also as a Windows 10 installer.
 
-YAPPARI-5 is designed to multiple datasets fitting of the impedance spectra of one user-made circuit. You are encouraged to contribute to this help file, you can send it to me or fork it on Github. As much I like programming, writing documentation is boring.
+YAPPARI-5 is designed to fit multiple datasets of impedance spectra to a user-made circuit. You are encouraged to contribute to this help file, you can send it to me or fork it on Github. As much I like programming, writing documentation is boring.
 
 ## Panels ##
 The program has a graphic panel window with 5 options, a parameter list and several commands grouped in the right side of the window.
