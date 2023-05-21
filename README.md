@@ -1,6 +1,6 @@
 # win10-installer-yappari-5-2018
 
-compiled with Labview 2018. A newer version is [here](https://github.com/nitad54448/installer-yappari-v5).
+This is a recent version compiled with Labview 2018. A newer version is [here](https://github.com/nitad54448/installer-yappari-v5).
 
 YAPPARI stands for Yet Another Program for Analysis and Research in Impedance.
 This program can be referenced in publications as http://dx.doi.org/10.13140/RG.2.2.15160.83200
